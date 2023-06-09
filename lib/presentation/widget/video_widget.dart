@@ -20,7 +20,8 @@ class VideoWidget extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 10,right: 10,
+          bottom: 10,
+          right: 10,
           child: CircleAvatar(
             radius: 22,
             backgroundColor: Colors.black.withOpacity(0.5),

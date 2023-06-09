@@ -5,8 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:netfilx_clone/core/api.dart';
 import 'package:netfilx_clone/core/colors/colors.dart';
 import 'package:netfilx_clone/core/contants.dart';
+import 'package:netfilx_clone/domain/past_year/past_year_functions.dart';
 import 'package:netfilx_clone/domain/popular/popular_functions.dart';
 import 'package:netfilx_clone/domain/top10_tv/top10tv_functions.dart';
+import 'package:netfilx_clone/domain/trending/trending_functions.dart';
+import 'package:netfilx_clone/domain/tv_series/tv_series_function.dart';
 
 final String q =
     'https://image.tmdb.org/t/p/w500//r2J02Z2OpNTctfOSN1Ydgii51I3.jpg';
@@ -66,7 +69,7 @@ class Home extends StatelessWidget {
           HomeHorizotalTiles(
             title: 'Released in the past year',
             imageList: [q, q, q, q, q, q],
-            fun: getImageFromPopular(),
+            fun: getPastYear(),
           ),
           HomeHorizotalTiles(
             title: 'Trending Now',
@@ -75,9 +78,13 @@ class Home extends StatelessWidget {
           StackHorizotalTiles(
               title: 'Top 10 TV In India Today', imageList: [q, q, q, q, q, q]),
           HomeHorizotalTiles(
-              title: 'Trends Drama', imageList: [q, q, q, q, q, q]),
+              fun: getImageFromPopular(),
+              title: 'Trends Drama',
+              imageList: [q, q, q, q, q, q]),
           HomeHorizotalTiles(
-              title: 'South Indian Cinema', imageList: [q, q, q, q, q, q]),
+              fun: getImageFromTV(),
+              title: 'South Indian Cinema',
+              imageList: [q, q, q, q, q, q]),
         ],
       ),
     );
@@ -200,7 +207,7 @@ class StackHorizotalTiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var listView = FutureBuilder(
-      future: getImageFromTV(),
+      future: getTvSeries(),
       builder: (context, snapshot) => ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {

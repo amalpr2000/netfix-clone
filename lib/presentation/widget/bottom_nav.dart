@@ -2,10 +2,11 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:netfilx_clone/presentation/news_and_hot/news_and_hot_screen.dart';
 import 'package:netfilx_clone/presentation/downloads/screen_downloads.dart';
 import 'package:netfilx_clone/presentation/fast_laugh/screen_fast_and_laugh.dart';
 import 'package:netfilx_clone/presentation/home/screen_home.dart';
-import 'package:netfilx_clone/presentation/new&hot/screen_new_and_hot.dart';
+
 import 'package:netfilx_clone/presentation/search/screen_search.dart';
 
 class BottomNav extends StatefulWidget {
@@ -60,9 +61,9 @@ class _BottomNavState extends State<BottomNav> {
 
   List<Widget> pageList = [
     Home(),
-    ScreenNewAndHot(),
-    ScreenFastLaugh(),
-    ScreenSearch(),
+    NewsAndHotScreen(),
+    FastLaughsScreen(),
+    SearchScreen(),
     ScreenDownloads(),
   ];
 }

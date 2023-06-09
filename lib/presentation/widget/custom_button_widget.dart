@@ -4,7 +4,11 @@ import '../../core/colors/colors.dart';
 
 class CustomButtonWidget extends StatelessWidget {
   const CustomButtonWidget(
-      {super.key, required this.icon, required this.title,this.iconsize=30,this.textsize=18.0});
+      {super.key,
+      required this.icon,
+      required this.title,
+      this.iconsize = 30,
+      this.textsize = 18.0});
 
   final IconData icon;
   final String title;
@@ -22,7 +26,7 @@ class CustomButtonWidget extends StatelessWidget {
         ),
         Text(
           title,
-          style:  TextStyle(fontSize: textsize),
+          style: TextStyle(fontSize: textsize),
         )
       ],
     );

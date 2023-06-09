@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../core/colors/colors.dart';
@@ -30,7 +29,7 @@ class VideoListItem extends StatelessWidget {
                   ),
                 ),
               ),
-               Column(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
